@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maintenance — CINEZOX</title>
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #07070c;
+  --surface:    rgba(255,255,255,.04);
+  --border:     rgba(255,255,255,.07);
+  --txt:        #ffffff;
+  --dim:        rgba(255,255,255,.48);
+  --mute:       rgba(255,255,255,.22);
+  --violet:     #7c3aed;
+  --violet-dim: rgba(124,58,237,.14);
+}
+
+html, body { height: 100%; }
+
+body {
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--txt);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
+}
+
+/* halo fond */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 45% at 50% -5%, rgba(124,58,237,.13), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Zone centrale ── */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* Logo */
+.logo {
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 48px;
+}
+
+/* Titre */
+h1 {
+  font-size: clamp(2rem, 7vw, 2.8rem);
+  font-weight: 900;
+  letter-spacing: -.035em;
+  line-height: 1.08;
+  margin-bottom: 24px;
+}
+
+/* Texte corps */
+.body {
+  color: var(--dim);
+  font-size: .92rem;
+  line-height: 1.72;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.body strong { color: var(--txt); font-weight: 700; }
+
+/* ETA */
+.eta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 32px;
+  padding: 16px 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+}
+
+.eta-label {
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.eta-value {
+  font-size: .92rem;
+  font-weight: 800;
+  color: var(--txt);
+  white-space: nowrap;
+}
+
+/* Séparateur */
+.sep {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 36px 0;
+}
+
+/* Merci */
+.thanks-label {
+  font-size: .64rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 10px;
+}
+
+.thanks-text {
+  font-size: .9rem;
+  color: var(--dim);
+  line-height: 1.7;
+}
+
+.thanks-text strong { color: var(--txt); font-weight: 700; }
+
+/* ── Footer ── */
+footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px 24px;
+  font-size: .66rem;
+  color: var(--mute);
+  letter-spacing: .04em;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .center { padding: 48px 22px 40px; align-items: flex-start; }
+  .logo   { margin-bottom: 36px; }
+  h1      { font-size: 2.1rem; margin-bottom: 20px; }
+  .body   { font-size: .88rem; gap: 12px; }
+  .eta    { margin-top: 26px; padding: 14px 16px; }
+  .sep    { margin: 28px 0; }
+  .thanks-text { font-size: .86rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="center">
+  <div class="wrap">
+
+    <div class="logo">Cinezox</div>
+
+    <h1>On revient<br>dans 1 heure.</h1>
+
+    <div class="body">
+      <p>Le site est temporairement inaccessible. On règle ça aussi vite que possible, et on s'en excuse.</p>
+      <p>
+        Honnêtement ? <strong>On ne s'attendait vraiment pas à autant de monde.</strong>
+        Le serveur était dimensionné pour tenir deux mois et demi confortablement.
+        Il a tenu deux jours. Les inscriptions ont tellement explosé qu'il a simplement décidé que c'était trop pour lui.
+        On peut pas vraiment lui en vouloir.
+      </p>
+      <p>On remet tout en ordre et on revient plus solide.</p>
+    </div>
+
+    <div class="eta">
+      <span class="eta-label">Retour estimé</span>
+      <span class="eta-value">Dans environ 1 h</span>
+    </div>
+
+    <hr class="sep">
+
+    <div class="thanks-label">Un grand merci</div>
+    <div class="thanks-text">
+      Vraiment — <strong>merci</strong>. On a lancé Cinezox en se demandant si les gens allaient venir.
+      Vous êtes arrivés en masse, bien au-delà de tout ce qu'on avait imaginé.
+      C'est exactement pour ça qu'on est en maintenance aujourd'hui,
+      et c'est exactement pour ça qu'on continue.<br><br>
+      À noter : prochainement, <strong>les membres Premium auront accès au site même pendant les maintenances</strong>.
+      C'est notre façon de remercier ceux qui nous font confiance.
+    </div>
+
+  </div>
+</div>
+
+<footer>© Cinezox · Tous droits réservés</footer>
+
+</body>
+</html>
